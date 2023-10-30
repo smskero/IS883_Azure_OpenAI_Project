@@ -6,7 +6,7 @@ import os
 # Set up your OpenAI API key
 openai.api_key = os.environ.get('OPENAI_API_KEY')
 # Initialize Streamlit
-st.title("Azure Guide Chatbot")
+st.title("MA Legal LLM")
 # Create a text input field for user queries
 user_input = st.text_input("Ask a question:")
 # Send the user's query to OpenAI GPT-3
