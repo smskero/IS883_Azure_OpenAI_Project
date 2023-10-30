@@ -34,7 +34,7 @@ if user_input:
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=user_input,
-        max_tokens=50,
+        max_tokens=150,
         temperature=temperature
     )
 
