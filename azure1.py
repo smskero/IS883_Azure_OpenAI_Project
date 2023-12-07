@@ -19,7 +19,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
 
 # Set up your OpenAI API key
-openai_api_key = OPEN_API_KEY  # Replace with your OpenAI API key if not set via environment variable
+openai.api_key = os.environ.get('OPENAI_API_KEY')
 
 # Initialize Streamlit
 st.title("LLM Chatbot")
