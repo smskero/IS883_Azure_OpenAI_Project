@@ -26,14 +26,27 @@ openai_api_key = os.environ.get('OPENAI_API_KEY')
 st.title("Boston City Code Chatbot")
 st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for all things Boston law.")
 
-uploaded_file = st.file_uploader('Short Boston Code.pdf')
-if uploaded_file is not None:
-    text = uploaded_file.read()
+#uploaded_file = st.file_uploader('Short Boston Code.pdf')
+#if uploaded_file is not None:
+    #text = uploaded_file.read()
+
+# GitHub repository details
+github_owner = 'smskero'
+github_repository = 'IS883_Team_5_Project'
+file_path_in_repository = 'Short Boston Code.pdf'
+
+# Read the file content
+docs = read_file_from_github(github_owner, github_repository, file_path_in_repository)
 
 # Create a text input field for user queries
 user_input = st.text_input("Please input your question below:")
 
 # Your backend code starts here
+
+#docs = st.read('Short Boston Code.pdf')
+#if docs is not None:
+    #docs = "Short Boston Code.pdf".read()
+
 
 if user_input:
     # Your existing backend code
