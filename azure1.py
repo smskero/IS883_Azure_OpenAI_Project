@@ -26,6 +26,10 @@ openai_api_key = os.environ.get('OPENAI_API_KEY')
 st.title("Boston City Code Chatbot")
 st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for all things Boston law.")
 
+uploaded_file = st.file_uploader('Short Boston Code.pdf')
+if uploaded_file is not None:
+    text = uploaded_file.read()
+
 # Create a text input field for user queries
 user_input = st.text_input("Please input your question below:")
 
