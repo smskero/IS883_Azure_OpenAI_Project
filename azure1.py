@@ -24,6 +24,7 @@ openai_api_key = os.environ.get('OPENAI_API_KEY')
 
 # Initialize Streamlit
 st.title("LLM Chatbot")
+st.subheader("Instructions")
 
 # Create a text input field for user queries
 user_input = st.text_input("Ask a question:")
