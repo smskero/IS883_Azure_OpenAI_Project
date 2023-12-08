@@ -6,8 +6,8 @@ import os
 # azure.py
 # Import necessary libraries
 import streamlit as st
-import nltk
-nltk.download('punkt')
+#import nltk
+#nltk.download('punkt')
 
 
 # Replace these imports with your actual backend code
