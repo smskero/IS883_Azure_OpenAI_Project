@@ -26,25 +26,29 @@ openai_api_key = os.environ.get('OPENAI_API_KEY')
 st.title("Boston City Code Chatbot")
 st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for all things Boston law.")
 
+#File Load Attempt 1
 #uploaded_file = st.file_uploader('Short Boston Code.pdf')
 #if uploaded_file is not None:
     #text = uploaded_file.read()
 
-import requests
+#Attempt 1 End
+# File Load Attempt 2
+#import requests
 
 # Function to fetch file content from GitHub repository
-def read_file_from_github(owner, repository, file_path):
-    raw_url = f"https://raw.githubusercontent.com/{owner}/{repository}/main/{file_path}"
-    response = requests.get(raw_url)
-    return response.text
+#def read_file_from_github(owner, repository, file_path):
+    #raw_url = f"https://raw.githubusercontent.com/{owner}/{repository}/main/{file_path}"
+    #response = requests.get(raw_url)
+    #return response.text
 
 # GitHub repository details
-github_owner = 'smskero'
-github_repository = 'IS883_Team_5_Project'
-file_path_in_repository = 'Short Boston Code.pdf'
+#github_owner = 'smskero'
+#github_repository = 'IS883_Team_5_Project'
+#file_path_in_repository = 'Short Boston Code.pdf'
 
 # Read the file content
-docs = read_file_from_github(github_owner, github_repository, file_path_in_repository)
+#docs = read_file_from_github(github_owner, github_repository, file_path_in_repository)
+#Attempt 2 end
 
 # Create a text input field for user queries
 user_input = st.text_input("Please input your question below:")
