@@ -27,9 +27,9 @@ st.title("Boston City Code Chatbot")
 st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for all things Boston law.")
 
 #File Load Attempt 1
-#uploaded_file = st.file_uploader('Short Boston Code.pdf')
-#if uploaded_file is not None:
-    #text = uploaded_file.read()
+uploaded_file = st.file_uploader('Short Boston Code.pdf')
+if uploaded_file is not None:
+    text = uploaded_file.read()
 
 #Attempt 1 End
 # File Load Attempt 2
@@ -51,7 +51,7 @@ st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for al
 #Attempt 2 end
 
 # Create a text input field for user queries
-user_input = st.text_input("Please input your question below:")
+    user_input = st.text_input("Please input your question below:")
 
 # Your backend code starts here
 
@@ -60,31 +60,31 @@ user_input = st.text_input("Please input your question below:")
     #docs = "Short Boston Code.pdf".read()
 
 
-if user_input:
+    if user_input:
     # Your existing backend code
-    query = user_input  # Assuming the user input is the query
+        query = user_input  # Assuming the user input is the query
     
     # Replace this block with your existing backend code
-    dataset_corpus_path = "Short Boston Code.pdf"
+        dataset_corpus_path = "Short Boston Code.pdf"
     
-    pdf_loader = PyPDFDirectoryLoader(dataset_corpus_path)
-    documents = pdf_loader.load()
+        pdf_loader = PyPDFDirectoryLoader(dataset_corpus_path)
+        documents = pdf_loader.load()
     
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=750,
-        chunk_overlap=100
-    )
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=750,
+            chunk_overlap=100
+        )
     
-    chunks = pdf_loader.load_and_split(text_splitter)
+        chunks = pdf_loader.load_and_split(text_splitter)
     
-    embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, temperature = 0.3)
-    db = FAISS.from_documents(chunks, embeddings)
+        embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, temperature = 0.3)
+        db = FAISS.from_documents(chunks, embeddings)
     
-    chain = load_qa_chain(OpenAI(openai_api_key=openai_api_key), chain_type="stuff")
+        chain = load_qa_chain(OpenAI(openai_api_key=openai_api_key), chain_type="stuff")
     
-    docs = db.similarity_search(query, k=2)
+        docs = db.similarity_search(query, k=2)
     
-    result = chain.run(input_documents=docs, question=query)
+        result = chain.run(input_documents=docs, question=query)
     
     # Display the result
-    st.write(result)  # Modify this to display the result as needed
+        st.write(result)  # Modify this to display the result as needed
