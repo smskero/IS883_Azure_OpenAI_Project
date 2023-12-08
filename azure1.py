@@ -23,11 +23,11 @@ from langchain.llms import OpenAI
 openai_api_key = os.environ.get('OPENAI_API_KEY')
 
 # Initialize Streamlit
-st.title("LLM Chatbot")
-st.subheader("Instructions")
+st.title("Boston City Code Chatbot")
+st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for all things Boston law.")
 
 # Create a text input field for user queries
-user_input = st.text_input("Ask a question:")
+user_input = st.text_input("Input your question below:")
 
 # Your backend code starts here
 
