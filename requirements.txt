@@ -3,4 +3,4 @@ streamlit==1.18.1
 openai
 langchain
 tiktoken
-faiss_cpu
+faiss-cpu
