@@ -27,7 +27,7 @@ st.title("Boston City Code Chatbot")
 st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for all things Boston law.")
 
 # Create a text input field for user queries
-user_input = st.text_input("Input your question below:")
+user_input = st.text_input("Please input your question below:")
 
 # Your backend code starts here
 
