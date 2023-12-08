@@ -4,3 +4,4 @@ streamlit-extras
 altair==4.1.0
 openai
 langchain
+nltk
