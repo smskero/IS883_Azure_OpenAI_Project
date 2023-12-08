@@ -30,6 +30,14 @@ st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for al
 #if uploaded_file is not None:
     #text = uploaded_file.read()
 
+import requests
+
+# Function to fetch file content from GitHub repository
+def read_file_from_github(owner, repository, file_path):
+    raw_url = f"https://raw.githubusercontent.com/{owner}/{repository}/main/{file_path}"
+    response = requests.get(raw_url)
+    return response.text
+
 # GitHub repository details
 github_owner = 'smskero'
 github_repository = 'IS883_Team_5_Project'
