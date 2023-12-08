@@ -8,6 +8,7 @@ import os
 import streamlit as st
 #import nltk
 #nltk.download('punkt')
+pip install tiktoken
 
 
 # Replace these imports with your actual backend code
