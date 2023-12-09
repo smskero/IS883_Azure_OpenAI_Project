@@ -78,7 +78,7 @@ if user_input:
         chunk_overlap=100
         )
     
-        chunks = pdf_loader.load_and_split(text_splitter)
+    chunks = pdf_loader.load_and_split(text_splitter)
     
         embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, temperature = 0.3)
         db = FAISS.from_documents(chunks, embeddings)
