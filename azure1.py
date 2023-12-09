@@ -51,7 +51,7 @@ st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for al
 #Attempt 2 end
 #Attempt 3 start
 uploaded_file = st.file_uploader("Short Boston Code.pdf", type=['pdf'])
-loader=PyPDFLoader(uploaded_file.name)  # Now this is the loader that you will use with your splitter
+loader=PyPDFDirectoryLoader(uploaded_file.name)  # Now this is the loader that you will use with your splitter
 
 # Create a text input field for user queries
 user_input = st.text_input("Please input your question below:")
