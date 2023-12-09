@@ -27,9 +27,9 @@ st.title("Boston City Code Chatbot")
 st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for all things Boston law.")
 
 #File Load Attempt 1
-uploaded_file = st.file_uploader('Short Boston Code.pdf')
-if uploaded_file is not None:
-    text = uploaded_file.read()
+#uploaded_file = st.file_uploader('Short Boston Code.pdf')
+#if uploaded_file is not None:
+    #text = uploaded_file.read()
 
 #Attempt 1 End
 # File Load Attempt 2
@@ -49,6 +49,9 @@ if uploaded_file is not None:
 # Read the file content
 #docs = read_file_from_github(github_owner, github_repository, file_path_in_repository)
 #Attempt 2 end
+#Attempt 3 start
+uploaded_file = st.file_uploader("Short Boston Code.pdf", type=['pdf'])
+loader=PyPDFLoader(uploaded_file.name)  # Now this is the loader that you will use with your splitter
 
 # Create a text input field for user queries
     user_input = st.text_input("Please input your question below:")
