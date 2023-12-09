@@ -54,7 +54,7 @@ uploaded_file = st.file_uploader("Short Boston Code.pdf", type=['pdf'])
 loader=PyPDFLoader(uploaded_file.name)  # Now this is the loader that you will use with your splitter
 
 # Create a text input field for user queries
-    user_input = st.text_input("Please input your question below:")
+user_input = st.text_input("Please input your question below:")
 
 # Your backend code starts here
 
@@ -63,19 +63,19 @@ loader=PyPDFLoader(uploaded_file.name)  # Now this is the loader that you will u
     #docs = "Short Boston Code.pdf".read()
 
 
-    if user_input:
+if user_input:
     # Your existing backend code
-        query = user_input  # Assuming the user input is the query
+    query = user_input  # Assuming the user input is the query
     
     # Replace this block with your existing backend code
-        dataset_corpus_path = "Short Boston Code.pdf"
+    dataset_corpus_path = "Short Boston Code.pdf"
     
-        pdf_loader = PyPDFDirectoryLoader(dataset_corpus_path)
-        documents = pdf_loader.load()
+    pdf_loader = PyPDFDirectoryLoader(dataset_corpus_path)
+    documents = pdf_loader.load()
     
-        text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=750,
-            chunk_overlap=100
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=750,
+        chunk_overlap=100
         )
     
         chunks = pdf_loader.load_and_split(text_splitter)
