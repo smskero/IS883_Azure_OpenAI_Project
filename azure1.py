@@ -80,14 +80,14 @@ if user_input:
     
     chunks = pdf_loader.load_and_split(text_splitter)
     
-        embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, temperature = 0.3)
-        db = FAISS.from_documents(chunks, embeddings)
+    embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, temperature = 0.3)
+    db = FAISS.from_documents(chunks, embeddings)
     
-        chain = load_qa_chain(OpenAI(openai_api_key=openai_api_key), chain_type="stuff")
+    chain = load_qa_chain(OpenAI(openai_api_key=openai_api_key), chain_type="stuff")
     
-        docs = db.similarity_search(query, k=2)
+    docs = db.similarity_search(query, k=2)
     
-        result = chain.run(input_documents=docs, question=query)
+    result = chain.run(input_documents=docs, question=query)
     
     # Display the result
-        st.write(result)  # Modify this to display the result as needed
+    st.write(result)  # Modify this to display the result as needed
