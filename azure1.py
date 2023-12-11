@@ -52,10 +52,10 @@ st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for al
 #Attempt 2 end
 #Attempt 3 start
 uploaded_file = st.file_uploader("Choose a file", type=['pdf'])
-st.write(uploaded_file)
-st.write(uploaded_file.name)
+from pathlib import Path
+st.write(Path("data"), uploaded_file.name)
 
-loader=PyPDFDirectoryLoader(uploaded_file.name)  # Now this is the loader that you will use with your splitter
+loader=PyPDFDirectoryLoader(Path("data") + "/" +  uploaded_file.name)  # Now this is the loader that you will use with your splitter
 #Attempt 3 end
 st.write(loader)
 text_splitter = RecursiveCharacterTextSplitter(
