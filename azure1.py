@@ -52,19 +52,19 @@ st.subheader("Welcome to the Boston City Code Chatbot! Your one stop shop for al
 #Attempt 2 end
 #Attempt 3 start
 uploaded_file = st.file_uploader("Choose a file", type=['pdf'])
-from pathlib import Path
-st.write(Path("data"), uploaded_file.name)
+# from pathlib import Path
+# st.write(Path("data"), uploaded_file.name)
 
-loader=PyPDFDirectoryLoader("./data/" +  uploaded_file.name)  # Now this is the loader that you will use with your splitter
-#Attempt 3 end
-st.write(loader)
-text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=750,
-    chunk_overlap=100
-    )
-raw_documents = loader.load()
-st.write(len(raw_documents))
-st.write(raw_documents[0])
+# loader=PyPDFDirectoryLoader("./data/" +  uploaded_file.name)  # Now this is the loader that you will use with your splitter
+# #Attempt 3 end
+# st.write(loader)
+# text_splitter = RecursiveCharacterTextSplitter(
+#     chunk_size=750,
+#     chunk_overlap=100
+#     )
+# raw_documents = loader.load()
+# st.write(len(raw_documents))
+# st.write(raw_documents[0])
 
 # Create a text input field for user queries
 user_input = st.text_input("Please input your question below:")
@@ -84,6 +84,7 @@ if user_input:
     # dataset_corpus_path = "Short Boston Code.pdf"
     
     # pdf_loader = PyPDFDirectoryLoader(dataset_corpus_path)
+    loader=PyPDFDirectoryLoader(uploaded_file.name)  # Now this is the loader that you will use with your splitter
     # documents = pdf_loader.load()
     
     text_splitter = RecursiveCharacterTextSplitter(
