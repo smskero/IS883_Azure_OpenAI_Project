@@ -70,18 +70,18 @@ if user_input:
     query = user_input  # Assuming the user input is the query
     
     # Replace this block with your existing backend code
-    dataset_corpus_path = "Short Boston Code.pdf"
+    # dataset_corpus_path = "Short Boston Code.pdf"
     
-    pdf_loader = PyPDFDirectoryLoader(dataset_corpus_path)
-    documents = pdf_loader.load()
+    # pdf_loader = PyPDFDirectoryLoader(dataset_corpus_path)
+    # documents = pdf_loader.load()
     
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=750,
         chunk_overlap=100
         )
     
-    chunks = pdf_loader.load_and_split(text_splitter)
-    print('helloooo', chunks)
+    # chunks = pdf_loader.load_and_split(text_splitter)
+    chunks = loader.load_and_split(text_splitter)
     
     embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, temperature = 0.3)
     db = FAISS.from_documents(chunks, embeddings)
