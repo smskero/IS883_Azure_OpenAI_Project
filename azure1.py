@@ -87,8 +87,8 @@ if user_input:
     # documents = pdf_loader.load()
     
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=750,
-        chunk_overlap=100
+        chunk_size=20,
+        chunk_overlap=0
         )
     
     # chunks = pdf_loader.load_and_split(text_splitter)
