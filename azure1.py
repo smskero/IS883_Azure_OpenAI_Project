@@ -55,7 +55,7 @@ uploaded_file = st.file_uploader("Choose a file", type=['pdf'])
 from pathlib import Path
 st.write(Path("data"), uploaded_file.name)
 
-loader=PyPDFDirectoryLoader(Path("data") + "/" +  uploaded_file.name)  # Now this is the loader that you will use with your splitter
+loader=PyPDFDirectoryLoader("./data/" +  uploaded_file.name)  # Now this is the loader that you will use with your splitter
 #Attempt 3 end
 st.write(loader)
 text_splitter = RecursiveCharacterTextSplitter(
