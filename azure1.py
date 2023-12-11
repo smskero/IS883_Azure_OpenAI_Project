@@ -57,6 +57,10 @@ st.write(uploaded_file.name)
 
 loader=PyPDFDirectoryLoader(uploaded_file.name)  # Now this is the loader that you will use with your splitter
 #Attempt 3 end
+st.write(loader)
+chunks = loader.load_and_split(text_splitter)
+st.write(len(chunks))
+st.write(chunks[0])
 
 # Create a text input field for user queries
 user_input = st.text_input("Please input your question below:")
