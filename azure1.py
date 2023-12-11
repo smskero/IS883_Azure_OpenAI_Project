@@ -81,7 +81,7 @@ if user_input:
         )
     
     chunks = pdf_loader.load_and_split(text_splitter)
-    print(chunks)
+    print('helloooo', chunks)
     
     embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, temperature = 0.3)
     db = FAISS.from_documents(chunks, embeddings)
