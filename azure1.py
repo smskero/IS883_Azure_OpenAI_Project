@@ -62,9 +62,9 @@ text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=750,
     chunk_overlap=100
     )
-chunks = loader.load_and_split(text_splitter)
-st.write(len(chunks))
-st.write(chunks[0])
+raw_documents = loader.load()
+st.write(len(raw_documents))
+st.write(raw_documents[0])
 
 # Create a text input field for user queries
 user_input = st.text_input("Please input your question below:")
